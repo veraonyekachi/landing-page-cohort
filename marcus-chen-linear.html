@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marcus Chen × Clay | Built for Linear</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#06070F;--bg2:#0C0E1C;--bg3:#11142A;
+  --clay:#00D4B8;--clay2:#00F5E0;
+  --accent:#5E6AD2;--accent2:#8B96E9;
+  --text:#FFFFFF;--muted:#8090A8;--border:#1A1E38;
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(6,7,15,0.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 48px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo-clay{display:flex;align-items:center;gap:9px;font-weight:800;font-size:18px;color:var(--clay);text-decoration:none}
+.clay-icon{width:30px;height:30px;background:var(--clay);border-radius:7px;display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:6px}
+.clay-icon span{background:#06070F;border-radius:2px;display:block}
+.nav-badge{font-size:12px;color:var(--muted);background:var(--bg3);padding:5px 14px;border-radius:20px;border:1px solid var(--border)}
+.nav-logo-co{display:flex;align-items:center;gap:8px;font-weight:700;font-size:16px;color:var(--accent)}
+.co-diamond{width:10px;height:10px;background:var(--accent);transform:rotate(45deg);border-radius:2px}
+
+.hero{min-height:88vh;display:flex;align-items:center;padding:80px 48px;position:relative;overflow:hidden}
+.hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 25% 45%,rgba(94,106,210,0.14) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 80% 20%,rgba(0,212,184,0.09) 0%,transparent 55%),var(--bg)}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 420px;gap:64px;align-items:center;max-width:1100px;margin:0 auto;width:100%}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(94,106,210,0.1);border:1px solid rgba(94,106,210,0.3);color:var(--accent2);padding:7px 16px;border-radius:30px;font-size:12px;font-weight:600;margin-bottom:28px;letter-spacing:0.03em;text-transform:uppercase}
+.pulse{width:7px;height:7px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.75)}}
+h1{font-size:clamp(34px,4.5vw,58px);font-weight:900;line-height:1.08;letter-spacing:-0.03em;margin-bottom:22px}
+.accent-text{color:var(--accent2)}
+.clay-text{background:linear-gradient(135deg,var(--clay),var(--clay2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:17px;color:var(--muted);max-width:480px;margin-bottom:36px;line-height:1.65}
+.hero-sub strong{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15px;padding:14px 28px;border-radius:10px;text-decoration:none;transition:all 0.2s}
+.btn-primary{background:var(--clay);color:#06070F}.btn-primary:hover{background:var(--clay2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,212,184,0.28)}
+
+.hero-card{background:rgba(12,14,28,0.97);border:1px solid rgba(94,106,210,0.25);border-radius:18px;padding:22px;box-shadow:0 24px 64px rgba(0,0,0,0.7),0 0 0 1px rgba(94,106,210,0.08);transform:rotate(-1.5deg)}
+.card-top{display:flex;align-items:center;gap:8px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.card-status{width:7px;height:7px;background:#00D97E;border-radius:50%;animation:pulse 2.5s infinite}
+.card-title{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:0.08em}
+.card-row{display:grid;grid-template-columns:20px 1fr auto;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid rgba(26,30,56,0.8);font-size:13px}
+.card-row:last-child{border-bottom:none}
+.check{color:#00D97E;font-size:12px;font-weight:700}
+.field-name{color:var(--muted)}
+.field-val{font-weight:600;color:var(--text);text-align:right}
+.tag-icp{background:rgba(0,212,184,0.12);color:var(--clay);padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700}
+.tag-high{background:rgba(0,217,126,0.12);color:#00D97E;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700}
+.tag-opp{background:rgba(94,106,210,0.15);color:var(--accent2);padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700}
+
+.stats-strip{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 48px;display:flex;justify-content:center;gap:56px;flex-wrap:wrap}
+.stat{text-align:center}
+.stat-n{font-size:34px;font-weight:900;color:var(--clay);line-height:1}
+.stat-l{font-size:12px;color:var(--muted);margin-top:6px;max-width:120px}
+
+.section{padding:80px 48px;max-width:1100px;margin:0 auto}
+.tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--clay);margin-bottom:14px}
+h2{font-size:clamp(26px,3.5vw,42px);font-weight:900;letter-spacing:-0.025em;line-height:1.12;margin-bottom:14px}
+.sub{color:var(--muted);font-size:17px;max-width:560px;margin-bottom:48px;line-height:1.6}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+.pain-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:26px;position:relative;overflow:hidden;transition:border-color 0.2s,transform 0.2s}
+.pain-card:hover{border-color:rgba(94,106,210,0.35);transform:translateY(-3px)}
+.pain-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent)}
+.card-icon{width:46px;height:46px;background:rgba(94,106,210,0.1);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:16px}
+.pain-card h3{font-size:16px;font-weight:700;margin-bottom:9px;line-height:1.3}
+.pain-card p{color:var(--muted);font-size:13px;line-height:1.65}
+
+.sol-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:26px;position:relative;overflow:hidden;transition:border-color 0.2s,transform 0.2s}
+.sol-card:hover{border-color:rgba(0,212,184,0.35);transform:translateY(-3px)}
+.sol-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--clay)}
+.sol-icon{width:46px;height:46px;background:rgba(0,212,184,0.1);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:16px}
+.sol-card h3{font-size:16px;font-weight:700;margin-bottom:9px;color:var(--clay)}
+.sol-card p{color:var(--muted);font-size:13px;line-height:1.65}
+
+.quote{background:var(--bg2);border:1px solid var(--border);border-left:4px solid var(--clay);border-radius:12px;padding:26px 30px;margin-top:40px}
+.quote p{font-size:17px;font-style:italic;color:var(--text);margin-bottom:12px;line-height:1.6}
+.quote .attr{font-size:12px;color:var(--muted)}
+
+.divider{height:1px;background:var(--border);margin:0 48px}
+.dark-bg{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+
+.logo-grid{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.logo-pill{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:7px 16px;font-size:12px;font-weight:600;color:var(--muted)}
+.proof-row{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap}
+.proof-box{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:14px 22px;text-align:center}
+.proof-box .n{font-size:26px;font-weight:900;color:var(--clay)}
+.proof-box .l{font-size:11px;color:var(--muted);margin-top:3px}
+
+.cta-wrap{text-align:center;padding:100px 48px;position:relative;overflow:hidden}
+.cta-glow{position:absolute;inset:0;background:radial-gradient(ellipse 65% 55% at 50% 100%,rgba(94,106,210,0.1) 0%,transparent 60%),var(--bg)}
+.cta-inner{position:relative;z-index:1;max-width:560px;margin:0 auto}
+.cta-wrap h2{font-size:clamp(30px,4.5vw,50px);margin-bottom:14px}
+.cta-wrap p{color:var(--muted);font-size:17px;margin-bottom:36px}
+.btn-lg{font-size:17px;padding:17px 38px}
+.from-line{font-size:13px;color:var(--muted);margin-top:22px}
+.from-line strong{color:var(--text)}
+
+footer{border-top:1px solid var(--border);background:var(--bg2);padding:24px 48px;display:flex;justify-content:space-between;align-items:center}
+.ft-logo{display:flex;align-items:center;gap:8px;font-weight:800;color:var(--clay);font-size:15px}
+.ft-icon{width:22px;height:22px;background:var(--clay);border-radius:5px;display:grid;grid-template-columns:1fr 1fr;gap:2.5px;padding:5px}
+.ft-icon span{background:#06070F;border-radius:1.5px;display:block}
+footer p{font-size:12px;color:var(--muted)}
+
+@media(max-width:900px){
+  nav{padding:12px 20px}.hero-inner{grid-template-columns:1fr}.hero-card{display:none}
+  .hero{padding:60px 20px;min-height:auto}.stats-strip{gap:28px;padding:24px 20px}
+  .section{padding:56px 20px}.grid3{grid-template-columns:1fr}.divider{margin:0 20px}
+  footer{flex-direction:column;gap:10px;padding:20px}.cta-wrap{padding:70px 20px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo-clay" href="#">
+    <div class="clay-icon"><span></span><span></span><span></span><span></span></div>
+    Clay
+  </a>
+  <div class="nav-badge">Prepared exclusively for Linear</div>
+  <div class="nav-logo-co"><div class="co-diamond"></div> Linear</div>
+</nav>
+
+<div class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><span class="pulse"></span> Personalized Demo · Head of Growth</div>
+      <h1>Marcus, Linear raised <span class="accent-text">$82M.</span> Now build the outbound motion to match.</h1>
+      <p class="hero-sub">With <strong>18,000+ paying customers</strong> and fresh Series C capital, Linear's next growth lever isn't more PLG — it's precision outbound. Clay is how you build it in days, not quarters.</p>
+      <a href="https://calendly.com/vera-onyekachi/marcus-chen" class="btn btn-primary" target="_blank">Book your 20-min demo →</a>
+    </div>
+    <div class="hero-card">
+      <div class="card-top">
+        <div class="card-status"></div>
+        <div class="card-title">Clay enriching Linear account…</div>
+      </div>
+      <div class="card-row"><span class="check">✓</span><span class="field-name">Company</span><span class="field-val">Linear</span></div>
+      <div class="card-row"><span class="check">✓</span><span class="field-name">ARR</span><span class="field-val">$100M</span></div>
+      <div class="card-row"><span class="check">✓</span><span class="field-name">Series C raised</span><span class="field-val">$82M (Jun 2025)</span></div>
+      <div class="card-row"><span class="check">✓</span><span class="field-name">GTM model</span><span class="field-val">PLG + Sales</span></div>
+      <div class="card-row"><span class="check">✓</span><span class="field-name">Customers</span><span class="field-val">18,000+</span></div>
+      <div class="card-row"><span class="check">✓</span><span class="field-name">Outbound motion</span><span class="field-val"><span class="tag-opp">Opportunity</span></span></div>
+      <div class="card-row"><span class="check">✓</span><span class="field-name">ICP fit</span><span class="field-val"><span class="tag-high">High Match</span></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="stats-strip">
+  <div class="stat"><div class="stat-n">3×</div><div class="stat-l">Enrichment coverage vs. single providers</div></div>
+  <div class="stat"><div class="stat-n">80%</div><div class="stat-l">Reduction in manual research time</div></div>
+  <div class="stat"><div class="stat-n">150+</div><div class="stat-l">Data providers in one platform</div></div>
+  <div class="stat"><div class="stat-n">5,000+</div><div class="stat-l">GTM teams trust Clay</div></div>
+</div>
+
+<div class="section">
+  <div class="tag">The Problem</div>
+  <h2>The growth challenges every <span class="accent-text">PLG-to-sales</span> company hits</h2>
+  <p class="sub">Linear's product sells itself to developers. But unlocking enterprise growth and converting your highest-intent users into pipeline? That requires a different kind of infrastructure.</p>
+  <div class="grid3">
+    <div class="pain-card">
+      <div class="card-icon">🔀</div>
+      <h3>PQLs fall through the cracks</h3>
+      <p>Your product is generating thousands of signals — teams expanding, power users inviting others, usage spikes. But without the right enrichment layer, those intent signals are invisible to your sales team.</p>
+    </div>
+    <div class="pain-card">
+      <div class="card-icon">🚧</div>
+      <h3>No outbound infrastructure to match your product velocity</h3>
+      <p>Linear ships product fast. But building a precision outbound motion — targeting the right accounts at the right moment — is still manual, slow, and blocked by data gaps that tools like Apollo can't solve.</p>
+    </div>
+    <div class="pain-card">
+      <div class="card-icon">🧪</div>
+      <h3>Growth experiments die on bad data</h3>
+      <p>You have the ideas. But every growth experiment that relies on prospect data hits the same wall: incomplete records, missing signals, and enrichment that covers 60% at best. Hypotheses can't be tested properly.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="tag">The Solution</div>
+  <h2>Clay gives growth teams an <span class="clay-text">unfair data advantage</span></h2>
+  <p class="sub">Think of Clay as your GTM development environment — where you turn intent signals, product usage data, and enrichment into precision outbound campaigns in hours, not months.</p>
+  <div class="grid3">
+    <div class="sol-card">
+      <div class="sol-icon">🎯</div>
+      <h3>Intent-Based Outbound</h3>
+      <p>Connect product usage signals, LinkedIn activity, hiring data, and funding signals into a single enrichment layer. Trigger outreach at exactly the right moment — when an account is primed to buy, not when your SDR finally gets around to it.</p>
+    </div>
+    <div class="sol-card">
+      <div class="sol-icon">🤖</div>
+      <h3>Claygent AI Research</h3>
+      <p>Our AI agents research every target account autonomously — scraping their website, analyzing their tech stack, summarizing recent news — and output structured data your team can personalize at scale. No headcount required.</p>
+    </div>
+    <div class="sol-card">
+      <div class="sol-icon">⚡</div>
+      <h3>Move at Product Speed</h3>
+      <p>Clay's no-code interface means growth experiments that used to take weeks of engineering time now happen in an afternoon. Import signals, add enrichment, run AI analysis, push to your outreach tool. Done.</p>
+    </div>
+  </div>
+  <div class="quote">
+    <p>"Clay is how we turned our PLG data into precision outbound. We went from zero outbound motion to 3x pipeline in 60 days — without a single new sales hire."</p>
+    <div class="attr">— Head of Growth, Series C B2B SaaS company (similar model to Linear)</div>
+  </div>
+</div>
+
+<div class="dark-bg">
+  <div class="section">
+    <div class="tag">Trusted By</div>
+    <h2>The GTM teams building tomorrow's pipeline use Clay today</h2>
+    <p class="sub">5,000+ revenue teams globally — including companies Linear's team knows well.</p>
+    <div class="logo-grid">
+      <div class="logo-pill">OpenAI</div><div class="logo-pill">Anthropic</div><div class="logo-pill">Canva</div>
+      <div class="logo-pill">Ramp</div><div class="logo-pill">Rippling</div><div class="logo-pill">Vanta</div>
+      <div class="logo-pill">Vercel</div><div class="logo-pill">Notion</div>
+    </div>
+    <div class="proof-row">
+      <div class="proof-box"><div class="n">4.9★</div><div class="l">G2 Rating</div></div>
+      <div class="proof-box"><div class="n">$3.1B</div><div class="l">Valuation (Jan 2025)</div></div>
+      <div class="proof-box"><div class="n">10×</div><div class="l">Revenue growth in 2022 & 2023</div></div>
+      <div class="proof-box"><div class="n">6×</div><div class="l">Revenue growth in 2024</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-wrap">
+  <div class="cta-glow"></div>
+  <div class="cta-inner">
+    <div class="tag" style="text-align:center">Let's build this together</div>
+    <h2>See exactly what Clay can unlock for <span class="clay-text">Linear's growth motion</span></h2>
+    <p>20 minutes. We'll show you how to wire product signals + enrichment into a precision outbound workflow — built live, for Linear's actual ICP.</p>
+    <a href="https://calendly.com/vera-onyekachi/marcus-chen" class="btn btn-primary btn-lg" target="_blank">Book my 20-min demo →</a>
+    <div class="from-line">Sent personally by <strong>Vera Onyekachi</strong>, Account Executive at Clay.com</div>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-logo">
+    <div class="ft-icon"><span></span><span></span><span></span><span></span></div>
+    Clay
+  </div>
+  <p>© 2026 Clay.com &nbsp;·&nbsp; Built for Marcus Chen, Head of Growth at Linear</p>
+</footer>
+
+</body>
+</html>

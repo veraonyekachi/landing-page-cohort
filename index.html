@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clay Demo Pages — Vera Onyekachi</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#07090F;--bg2:#0D1117;--clay:#00D4B8;--text:#EEF2FF;--muted:#5B6785;--border:rgba(255,255,255,0.07)}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased}
+
+header{
+  padding:40px 40px 32px;
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:14px;
+}
+.clay-mark{width:32px;height:32px;background:var(--clay);border-radius:8px;display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:6px;flex-shrink:0}
+.clay-mark span{background:#07090F;border-radius:2px;display:block}
+.header-text h1{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:var(--clay);letter-spacing:-0.01em}
+.header-text p{font-size:13px;color:var(--muted);margin-top:2px}
+
+main{max-width:780px;margin:0 auto;padding:48px 40px}
+
+.page-title{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);margin-bottom:24px}
+
+.prospect-list{display:flex;flex-direction:column;gap:12px}
+
+.prospect-card{
+  display:flex;align-items:center;gap:20px;
+  background:var(--bg2);border:1px solid var(--border);border-radius:14px;
+  padding:20px 24px;text-decoration:none;color:inherit;
+  transition:border-color 0.15s,transform 0.15s;
+}
+.prospect-card:hover{border-color:rgba(0,212,184,0.22);transform:translateX(4px)}
+
+.avatar{
+  width:44px;height:44px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px;
+  flex-shrink:0;color:#07090F;
+}
+
+.prospect-info{flex:1}
+.prospect-name{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;margin-bottom:3px}
+.prospect-role{font-size:12.5px;color:var(--muted)}
+
+.prospect-status{
+  font-size:11px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;
+  padding:4px 10px;border-radius:20px;
+}
+.status-live{background:rgba(0,212,184,0.1);color:var(--clay)}
+.status-soon{background:rgba(255,255,255,0.05);color:var(--muted)}
+
+.arrow{color:var(--muted);font-size:18px;margin-left:4px;transition:transform 0.15s}
+.prospect-card:hover .arrow{transform:translateX(3px)}
+
+footer{
+  text-align:center;padding:40px;
+  font-size:12px;color:var(--muted);
+  border-top:1px solid var(--border);margin-top:48px;
+}
+
+@media(max-width:600px){
+  header{padding:24px 20px}
+  main{padding:32px 20px}
+  .prospect-card{padding:16px 18px;gap:14px}
+  .avatar{width:38px;height:38px;font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="clay-mark"><span></span><span></span><span></span><span></span></div>
+  <div class="header-text">
+    <h1>Clay Demo Pages</h1>
+    <p>Personalized for each prospect — by Vera Onyekachi, AE at Clay.com</p>
+  </div>
+</header>
+
+<main>
+  <div class="page-title">5 Prospects</div>
+  <div class="prospect-list">
+
+    <a class="prospect-card" href="/sarah-mitchell-retool">
+      <div class="avatar" style="background:#F05C28">SM</div>
+      <div class="prospect-info">
+        <div class="prospect-name">Sarah Mitchell</div>
+        <div class="prospect-role">VP of Revenue Operations · Retool</div>
+      </div>
+      <div class="prospect-status status-live">Live</div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="prospect-card" href="/marcus-chen-linear">
+      <div class="avatar" style="background:#5E6AD2">MC</div>
+      <div class="prospect-info">
+        <div class="prospect-name">Marcus Chen</div>
+        <div class="prospect-role">Head of Growth · Linear</div>
+      </div>
+      <div class="prospect-status status-live">Live</div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="prospect-card" href="/emily-rodriguez-loom">
+      <div class="avatar" style="background:#625DF5">ER</div>
+      <div class="prospect-info">
+        <div class="prospect-name">Emily Rodriguez</div>
+        <div class="prospect-role">Director of Sales Development · Loom</div>
+      </div>
+      <div class="prospect-status status-live">Live</div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="prospect-card" href="/james-okonkwo-webflow">
+      <div class="avatar" style="background:#4353FF">JO</div>
+      <div class="prospect-info">
+        <div class="prospect-name">James Okonkwo</div>
+        <div class="prospect-role">GTM Engineer · Webflow</div>
+      </div>
+      <div class="prospect-status status-live">Live</div>
+      <div class="arrow">→</div>
+    </a>
+
+    <a class="prospect-card" href="/rachel-goldstein-airtable">
+      <div class="avatar" style="background:#FCB400">RG</div>
+      <div class="prospect-info">
+        <div class="prospect-name">Rachel Goldstein</div>
+        <div class="prospect-role">VP of Sales · Airtable</div>
+      </div>
+      <div class="prospect-status status-live">Live</div>
+      <div class="arrow">→</div>
+    </a>
+
+  </div>
+</main>
+
+<footer>
+  Built with Clay.com · veraonyekachi31@gmail.com
+</footer>
+
+</body>
+</html>

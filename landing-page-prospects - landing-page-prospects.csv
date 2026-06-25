@@ -1,0 +1,6 @@
+first_name,last_name,email,title,company,company_website,linkedin_url,personalized_url
+Sarah,Mitchell,sarah.mitchell@retool.com,VP of Revenue Operations,Retool,https://retool.com,https://linkedin.com/in/sarahmitchell,https://clay-demo-pages.vercel.app/sarah-mitchell-retool
+Marcus,Chen,marcus.chen@linear.app,Head of Growth,Linear,https://linear.app,https://linkedin.com/in/marcuschen,https://clay-demo-pages.vercel.app/marcus-chen-linear
+Emily,Rodriguez,emily.rodriguez@loom.com,Director of Sales Development,Loom,https://www.loom.com,https://linkedin.com/in/emilyrodriguez,https://clay-demo-pages.vercel.app/emily-rodriguez-loom
+James,Okonkwo,james.okonkwo@webflow.com,GTM Engineer,Webflow,https://webflow.com,https://linkedin.com/in/jamesokonkwo,https://clay-demo-pages.vercel.app/james-okonkwo-webflow
+Rachel,Goldstein,rachel.goldstein@airtable.com,VP of Sales,Airtable,https://www.airtable.com,https://linkedin.com/in/rachelgoldstein,https://clay-demo-pages.vercel.app/rachel-goldstein-airtable
